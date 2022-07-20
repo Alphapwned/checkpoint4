@@ -1,10 +1,13 @@
 .background{
     width: calc(100vw - 300px);
     min-height: 100vh;
-    position: relative;
+    position: fixed;
     left: 300px;
     background-image: url(../images/mountain.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
