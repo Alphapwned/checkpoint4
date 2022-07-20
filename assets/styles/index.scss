@@ -3,20 +3,11 @@
 }
 
 .index_page{
-    width: calc(100vw - 300px);
-    min-height: 100vh;
-    position: relative;
-    left: 300px;
-    background-image: url(../images/mountain.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     color: white;
-
 
     .index_filter{
         background-color: rgba(27, 45, 61, 0.185);

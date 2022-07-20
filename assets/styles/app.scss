@@ -2,7 +2,8 @@
 
 @import '~bootstrap/scss/bootstrap';
 @import '_dashboard';
-@import 'index.scss';
+@import 'base';
+@import 'index';
 
 * {
     margin: 0;
