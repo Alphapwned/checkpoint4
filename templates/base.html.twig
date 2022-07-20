@@ -15,15 +15,42 @@
     </head>
 
     <body>
-        <header>
-        </header>
+        <div class="dashboard">
+        
+            <div class="profil_img">
+                <div class="img"></div>
+            </div>
+
+            <nav class="menu">
+                <ul>
+                    <div class="line"></div>
+                    <a href="#"><li>About me</li></a>
+                    <div class="line"></div>
+                    <a href="#"><li>Resume</li></a>
+                    <div class="line"></div>
+                    <a href="#"><li>Portfolio</li></a>
+                    <div class="line"></div>
+                    <a href="#"><li>Contact</li></a>
+                    <div class="line"></div>
+                </ul>
+            </nav>
+
+            <div class="separator"></div>
+            <div class="footer">
+                <div class="social_link">
+                    <ul>
+                        <a href="#"><li><img src="{{ asset('build/images/linkedin_logo.png') }}" alt="Linkedin logo"></li></a>
+                        <a href="#"><li><img src="{{ asset('build/images/github_logo.png') }}" alt="Github logo"></li></a>
+                        <a href="#"><li><img src="{{ asset('build/images/youtube_logo.png') }}" alt="Youtube logo"></li></a>
+                    </ul>
+                </div>
+                <p> 2022 © FONDEVILA Gautier<br>All rights reserved</p>
+            </div>
+        </div>
 
         <main>
-        dfcc
             {% block body %}{% endblock %}
         </main>
 
-        <footer>
-        </footer>
     </body>
 </html>
