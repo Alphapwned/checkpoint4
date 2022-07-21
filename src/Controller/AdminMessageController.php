@@ -45,8 +45,6 @@ class AdminMessageController extends AbstractController
         $messageUserContact->setIsHidden('0');
         $messageManager->flush();
 
-        return $this->redirectToRoute('app_admin_message_index', [
-            'id' => $messageUserContact->getId()
-        ]);
+        return $this->redirectToRoute('app_admin_message_index');
     }
 }
