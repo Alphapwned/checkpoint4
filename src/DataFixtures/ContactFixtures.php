@@ -20,6 +20,7 @@ class ContactFixtures extends Fixture
             $contacts->setEmail($faker->email());
             $contacts->setMessage($faker->sentence());
             $contacts->setCreatedAt();
+            $contacts->setIsHidden($faker->numberBetween(0, 1));
             $manager->persist($contacts);
         }
 

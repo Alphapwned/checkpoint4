@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Contact;
 use App\Form\Contact1Type;
 use App\Repository\ContactRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,25 +22,6 @@ class AdminMessageController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_admin_message_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, ContactRepository $contactRepository): Response
-    {
-        $contact = new Contact();
-        $form = $this->createForm(Contact1Type::class, $contact);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $contactRepository->add($contact, true);
-
-            return $this->redirectToRoute('app_admin_message_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('admin_message/new.html.twig', [
-            'contact' => $contact,
-            'form' => $form,
-        ]);
-    }
-
     #[Route('/{id}', name: 'app_admin_message_show', methods: ['GET'])]
     public function show(Contact $contact): Response
     {
@@ -48,31 +30,23 @@ class AdminMessageController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_admin_message_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Contact $contact, ContactRepository $contactRepository): Response
+    #[Route('/delete/{id}', methods: ['GET', 'DELETE'], name: 'app_admin_message_delete')]
+    public function delete(ManagerRegistry $doctrine, int $id): Response
     {
-        $form = $this->createForm(Contact1Type::class, $contact);
-        $form->handleRequest($request);
+        $messageManager = $doctrine->getManager();
+        $messageUserContact = $messageManager->getRepository(Contact::class)->find($id);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $contactRepository->add($contact, true);
-
-            return $this->redirectToRoute('app_admin_message_index', [], Response::HTTP_SEE_OTHER);
+        if (!$messageUserContact) {
+            throw $this->createNotFoundException(
+                'No message found for this contact.'
+            );
         }
 
-        return $this->renderForm('admin_message/edit.html.twig', [
-            'contact' => $contact,
-            'form' => $form,
+        $messageUserContact->setIsHidden('0');
+        $messageManager->flush();
+
+        return $this->redirectToRoute('app_admin_message_index', [
+            'id' => $messageUserContact->getId()
         ]);
-    }
-
-    #[Route('/{id}', name: 'app_admin_message_delete', methods: ['POST'])]
-    public function delete(Request $request, Contact $contact, ContactRepository $contactRepository): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$contact->getId(), $request->request->get('_token'))) {
-            $contactRepository->remove($contact, true);
-        }
-
-        return $this->redirectToRoute('app_admin_message_index', [], Response::HTTP_SEE_OTHER);
     }
 }

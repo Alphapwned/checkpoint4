@@ -19,24 +19,26 @@
 			</thead>
 			<tbody>
 				{% for contact in contacts %}
-					<tr>
-						<td scope="row">{{ contact.lastname }}</td>
-						<td>{{ contact.firstname }}</td>
-						<td>{{ contact.email }}</td>
-                        <td>
-                            <a href="{{ path('app_admin_message_show', {'id': contact.id}) }}" class="messages_link_btn">
-									<button class="">Afficher</button>
-							</a>
-						</td>
-                        <td>{{ contact.createdAt ? contact.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                        <td>
-                            <span class="data_list">
-                                <a href="#">
-                                    <i class=""></i>
-                                </a>
-                            </span>
-                        </td>
-					</tr>
+					{% if contact.isHidden == 1 %}
+						<tr>
+							<td scope="row">{{ contact.lastname }}</td>
+							<td>{{ contact.firstname }}</td>
+							<td>{{ contact.email }}</td>
+							<td>
+								<a href="{{ path('app_admin_message_show', {'id': contact.id}) }}" class="messages_link_btn">
+										<button class="">Afficher</button>
+								</a>
+							</td>
+							<td>{{ contact.createdAt ? contact.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+							<td>
+								<span class="data_list">
+									<a href="{{ path('app_admin_message_delete', {'id': contact.id}) }}">
+										<button class="">Delete</button>
+									</a>
+								</span>
+							</td>
+						</tr>
+					{% endif %}
                 {% else %}
                 <tr>
                     <td colspan="7">no records found</td>
