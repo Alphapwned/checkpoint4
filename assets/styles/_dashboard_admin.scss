@@ -1,0 +1,102 @@
+.dashboard_admin{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    background-color: rgb(24, 102, 8);
+
+    .profil_img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 30%;
+
+        .img{
+            width: 90%;
+            height: 90%;
+            background-image: url(../images/profil.jpeg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+    }
+
+    .menu{
+        width: 100%;
+        height: 60%;
+
+        ul{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            margin: 30px 0 0 0;
+            padding: 0;
+            
+            .line{
+                align-self: center;
+                width: 80%;
+                height: 1px;
+                background-color: white;
+            }
+
+            a{
+                color: white;
+
+                li{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 7vh;
+                }
+            }
+        }
+    }
+
+    .separator{
+        width: 80%;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        bottom: 155px;
+    }
+
+
+    .footer{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 25%;
+
+
+
+        .social_link{
+            width: 100%;
+
+            ul{
+                display: flex;
+                justify-content: space-around;
+                align-items: baseline;
+                margin: 2vh 0 2vh 0;
+                padding: 0;
+                width: 100%;
+            }
+        }
+            
+        p{
+            text-align: center;
+            margin: 0 0 10px 0;
+            color: white;
+        }
+    }
+}

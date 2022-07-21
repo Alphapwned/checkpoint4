@@ -3,7 +3,13 @@
 {% block title %}Hello AdminController!{% endblock %}
 
 {% block body %}
-    <div class="admin_page">
 
+{% include "partials/_AdminNavbar.html.twig" %}
+
+    <div class="background_admin">
+        <div class="admin_page">
+            <h1 class="text-center">Bienvenue dans le panneau d'administration</h1>
+        </div>
     </div>
+
 {% endblock %}
