@@ -41,6 +41,9 @@ class Contact
     #[ORM\Column(type: 'datetime')]
     private DateTimeInterface $createdAt;
 
+    #[ORM\Column(type: 'boolean')]
+    private ?bool $isHidden = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +105,18 @@ class Contact
     public function setCreatedAt(): self
     {
         $this->createdAt = new Datetime('now');
+
+        return $this;
+    }
+
+    public function isIsHidden(): ?bool
+    {
+        return $this->isHidden;
+    }
+
+    public function setIsHidden(bool $isHidden): self
+    {
+        $this->isHidden = $isHidden;
 
         return $this;
     }
