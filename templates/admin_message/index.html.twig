@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminMessageController!{% endblock %}
+{% block title %}Admin - Messages{% endblock %}
 
 {% block body %}
 
@@ -16,32 +16,34 @@
 						<th scope="col">Prénom</th>
 						<th scope="col">Adresse email</th>
 						<th scope="col">Message</th>
+                        <th scope="col">Envoyé le</th>
 						<th scope="col">Supprimer</th>
 					</tr>
 				</thead>
 				<tbody>
-					{% for message in messages %}
+					{% for contact in contacts %}
 						<tr>
-							<td scope="row">
-								{{ message.lastname }}
-							</td>
-							<td>
-								{{ message.firstname }}
-							</td>
-							<td>
-								{{ message.email }}
-							</td>
+							<td scope="row">{{ contact.lastname }}</td>
+							<td>{{ contact.firstname }}</td>
+							<td>{{ contact.email }}</td>
                             <td>
-								<a href="#" class="messages_link_btn">
+                                <a href="{{ path('app_admin_message_show', {'id': contact.id}) }}" class="messages_link_btn">
 										<button class="">Afficher</button>
 								</a>
 							</td>
+                            <td>{{ contact.createdAt ? contact.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                             <td>
-								<span class="data_list">
-									<a href="#"><i class=""></i></a>
-								</span>
-							</td>
+                                <span class="data_list">
+                                    <a href="#">
+                                        <i class=""></i>
+                                    </a>
+                                </span>
+                            </td>
 						</tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="7">no records found</td>
+                    </tr>
 					{% endfor %}
 				</tbody>
 			</table>
