@@ -1,53 +1,49 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseAdmin.html.twig' %}
 
 {% block title %}Admin - Messages{% endblock %}
 
 {% block body %}
 
-    {% include "partials/_AdminNavbar.html.twig" %}
-
-    <div class="background_admin">
-        <div class="admin_message">
-        <h2>Messages</h2>
-            <table class="table text-center">
-				<thead>
+    <div class="admin_message">
+    <h2>Messages</h2>
+        <table class="table text-center">
+			<thead>
+				<tr>
+					<th scope="col">Nom</th>
+					<th scope="col">Prénom</th>
+					<th scope="col">Adresse email</th>
+					<th scope="col">Message</th>
+                    <th scope="col">Envoyé le</th>
+					<th scope="col">Supprimer</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for contact in contacts %}
 					<tr>
-						<th scope="col">Nom</th>
-						<th scope="col">Prénom</th>
-						<th scope="col">Adresse email</th>
-						<th scope="col">Message</th>
-                        <th scope="col">Envoyé le</th>
-						<th scope="col">Supprimer</th>
+						<td scope="row">{{ contact.lastname }}</td>
+						<td>{{ contact.firstname }}</td>
+						<td>{{ contact.email }}</td>
+                        <td>
+                            <a href="{{ path('app_admin_message_show', {'id': contact.id}) }}" class="messages_link_btn">
+									<button class="">Afficher</button>
+							</a>
+						</td>
+                        <td>{{ contact.createdAt ? contact.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>
+                            <span class="data_list">
+                                <a href="#">
+                                    <i class=""></i>
+                                </a>
+                            </span>
+                        </td>
 					</tr>
-				</thead>
-				<tbody>
-					{% for contact in contacts %}
-						<tr>
-							<td scope="row">{{ contact.lastname }}</td>
-							<td>{{ contact.firstname }}</td>
-							<td>{{ contact.email }}</td>
-                            <td>
-                                <a href="{{ path('app_admin_message_show', {'id': contact.id}) }}" class="messages_link_btn">
-										<button class="">Afficher</button>
-								</a>
-							</td>
-                            <td>{{ contact.createdAt ? contact.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                            <td>
-                                <span class="data_list">
-                                    <a href="#">
-                                        <i class=""></i>
-                                    </a>
-                                </span>
-                            </td>
-						</tr>
-                    {% else %}
-                    <tr>
-                        <td colspan="7">no records found</td>
-                    </tr>
-					{% endfor %}
-				</tbody>
-			</table>
-        </div>
+                {% else %}
+                <tr>
+                    <td colspan="7">no records found</td>
+                </tr>
+				{% endfor %}
+			</tbody>
+		</table>
     </div>
 
 {% endblock %}

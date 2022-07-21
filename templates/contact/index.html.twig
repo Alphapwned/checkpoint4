@@ -4,21 +4,17 @@
 
 {% block body %}
 
-    {% include "partials/_UserNavbar.html.twig" %}
-
-    <div class="background">
-        <div class="contact_page">
-            <h2>Contact form</h2>
-                {{ form_start(form)}}
-                <p class="error_message">{{ warning }}</p>
-                {{ form_widget(form.firstname) }}
-                {{ form_widget(form.lastname) }}
-                {{ form_widget(form.email) }}
-                {{ form_widget(form.message) }}
-                {{ form_widget(form.send) }}
-                {{ form_rest(form) }}
-                {{ form_end(form) }}
-        </div>
+    <div class="contact_page">
+        <h2>Contact form</h2>
+            {{ form_start(form)}}
+            <p class="error_message">{{ warning }}</p>
+            {{ form_widget(form.firstname) }}
+            {{ form_widget(form.lastname) }}
+            {{ form_widget(form.email) }}
+            {{ form_widget(form.message) }}
+            {{ form_widget(form.send) }}
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
     </div>
 
 {% endblock %}
