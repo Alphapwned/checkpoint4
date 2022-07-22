@@ -17,7 +17,7 @@ class ContactController extends AbstractController
     public function new(Request $request, ContactRepository $contactRepository, FormManager $formManager): Response
     {
         $contact = new Contact();
-        $contact->setCreatedAt()->setMessage('');
+        $contact->setCreatedAt()->setMessage(' ');
 
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
