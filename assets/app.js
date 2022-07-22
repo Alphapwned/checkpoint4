@@ -37,7 +37,7 @@ import "tinymce/skins/content/default/content.css";
 /* Initialize TinyMCE */
 tinymce.init({
     selector: "textarea",
-    language: "en_EN",
+    language: "fr_FR",
     plugins: "advlist code link lists table fullscreen image",
     toolbar:
         "fullscreen undo redo | forecolor fontsize bold italic underline | bullist numlist | link image | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify",
