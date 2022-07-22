@@ -25,6 +25,9 @@ class AdminProjectController extends AbstractController
     public function new(Request $request, PortfolioRepository $portfolioRepository): Response
     {
         $portfolio = new Portfolio();
+        $portfolio->setContent(' ')->setSummary(' ');
+        
+
         $form = $this->createForm(PortfolioType::class, $portfolio);
         $form->handleRequest($request);
 
