@@ -42,7 +42,7 @@ class Contact
     private DateTimeInterface $createdAt;
 
     #[ORM\Column(type: 'boolean')]
-    private ?bool $isHidden = null;
+    private ?bool $isHidden = true;
 
     public function getId(): ?int
     {
