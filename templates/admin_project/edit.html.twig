@@ -1,0 +1,15 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Edit Portfolio{% endblock %}
+
+{% block body %}
+<div class="admin_project_edit">
+		<div class="">
+			<h1 class="">Modifier le projet</h1>
+			{{ include('admin_project/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+            <div class="">
+                <a class ="" href="{{ path('app_admin_project_index') }}">Retour</a>
+            </div>
+		</div>
+	</div>
+{% endblock %}
