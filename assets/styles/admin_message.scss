@@ -19,8 +19,14 @@
     .table{
         width: 90%;
         color: white;
-    }
 
+        button{
+            width: 100px;
+            background-color: rgb(24, 102, 8);
+            border-radius: 5px;
+            color: white;
+        }
+    }
 }
 
 .admin_message_show{
@@ -35,5 +41,33 @@
     overflow: visible;
     scrollbar-width: none;
     overflow-y: scroll;
-    
+
+    h2{
+        font-size: 3em;
+        margin: 50px 0 50px 0;
+    }
+
+    .table{
+        width: 90%;
+        color: white;
+
+        th{
+            min-width: 5vw;
+        }
+    }
+
+    .button{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+
+        button{
+            width: 200px;
+            background-color: rgb(24, 102, 8);
+            border-radius: 5px;
+            color: white;
+            margin: 50px 0 0 0;
+        }
+    }
 }

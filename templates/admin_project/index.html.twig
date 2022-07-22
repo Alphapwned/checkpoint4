@@ -9,11 +9,11 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Summary</th>
-                    <th>Duration</th>
-                    <th>Langage</th>
-                    <th>actions</th>
+                    <th>Nom</th>
+                    <th>Résumé</th>
+                    <th>Durée</th>
+                    <th>Language</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,8 +24,8 @@
                     <td>{{ portfolio.duration }}</td>
                     <td>{{ portfolio.langage }}</td>
                     <td>
-                        <a href="{{ path('app_admin_project_show', {'id': portfolio.id}) }}">show</a>
-                        <a href="{{ path('app_admin_project_edit', {'id': portfolio.id}) }}">edit</a>
+                        <a href="{{ path('app_admin_project_show', {'id': portfolio.id}) }}"><button>Détail</button></a>
+                        <a href="{{ path('app_admin_project_edit', {'id': portfolio.id}) }}"><button>Editer</button></a>
                     </td>
                 </tr>
             {% else %}
