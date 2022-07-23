@@ -15,10 +15,17 @@
     </head>
 
     <body>
-        {% include "partials/_UserNavbar.html.twig" %}
         <main>
-            <div class="background">
-                {% block body %}{% endblock %}
+            <div class="main_wrapper">
+                <div class="nav_user">
+                    {% include "partials/_UserNavbar.html.twig" %}
+                </div>
+                <div class="pages_content">
+                    <div class="background_user_index"></div>
+                    <div class="content">
+                        {% block body %}{% endblock %}
+                    </div>
+                </div>
             </div>
         </main>
     </body>
