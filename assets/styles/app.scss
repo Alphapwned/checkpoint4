@@ -1,21 +1,41 @@
 @import '~bootstrap/scss/bootstrap';
-@import '_dashboard';
-@import 'base';
-@import 'index';
-@import 'portfolio';
-@import 'contact';
-@import 'login';
-@import 'dashboard_admin';
-@import 'admin_index';
-@import 'admin_message';
-@import 'admin_project';
+
 
 * {
     margin: 0;
     padding: 0;
+    color: white;
 }
 
 a{
     text-decoration: none;
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
+
+h1{
+    font-size: 4em;
+}
+
+h2{
+    font-size: 3em;
+}
+
+h3{
+    font-size: 3em;
+    margin: 50px 0 50px 0;
+}
+
+
+@import 'dashboard_user';
+@import 'dashboard_admin';
+@import 'base';
+@import 'index';
+@import 'portfolio';
+@import 'contact';
+@import 'login';
+@import 'admin_index';
+@import 'admin_message';
+@import 'admin_project';
+@import 'responsive';

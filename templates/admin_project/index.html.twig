@@ -3,17 +3,21 @@
 {% block title %}Admin - Project{% endblock %}
 
 {% block body %}
-    <div class="admin_message">
-        <h2>Projets</h2>
 
+    <h2 class="text-center">Projets</h2>
+
+    <div class="admin_projects_table">
+        <a class="button_admin_create_project" href="{{ path('app_admin_project_new') }}">
+            <button>Nouveau</button>
+        </a>
         <table class="table">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Summary</th>
-                    <th>Duration</th>
-                    <th>Langage</th>
-                    <th>actions</th>
+                    <th>Nom</th>
+                    <th>Résumé</th>
+                    <th>Durée</th>
+                    <th>Language</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,18 +28,18 @@
                     <td>{{ portfolio.duration }}</td>
                     <td>{{ portfolio.langage }}</td>
                     <td>
-                        <a href="{{ path('app_admin_project_show', {'id': portfolio.id}) }}">show</a>
-                        <a href="{{ path('app_admin_project_edit', {'id': portfolio.id}) }}">edit</a>
+                        <a href="{{ path('app_admin_project_show', {'id': portfolio.id}) }}"><button>Détail</button></a>
+                        <a href="{{ path('app_admin_project_edit', {'id': portfolio.id}) }}"><button>Editer</button></a>
                     </td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="8">no records found</td>
+                    <td>no records found</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
+    <div>
 
-        <a href="{{ path('app_admin_project_new') }}">Create new</a>
-    </div>
+
 {% endblock %}

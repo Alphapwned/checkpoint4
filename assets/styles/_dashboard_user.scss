@@ -1,4 +1,4 @@
-.dashboard{
+.dashboard_user{
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -98,5 +98,11 @@
             margin: 0 0 10px 0;
             color: white;
         }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .mobile{
+        display: none;
     }
 }

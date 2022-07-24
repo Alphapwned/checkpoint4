@@ -1,0 +1,37 @@
+{% extends 'baseUser.html.twig' %}
+
+{% block title %}Project{% endblock %}
+
+{% block body %}
+
+    <div class="project_show">
+        <div class="project_detail">
+            <div class="project_detail_name">
+                <h3>{{ portfolio.name }}</h3>
+            </div>
+            <div>
+                <div class="project_detail_content">
+                    <div class="img" style="background-image: url('{{ portfolio.image }}');"></div>
+                        <p>
+                            {% autoescape %}
+                                {{ portfolio.content|raw }}
+                            {% endautoescape %}
+                        </p>
+                    </div>
+                    <div class="project_detail_duration_langage">
+                        <div class="project_detail_duration">
+                            <p class="text-center">Durée du projet : {{ portfolio.duration }} semaines</p>
+                        </div>
+                        <div class="project_detail_langage">
+                            <p class="text-center">Language : {{ portfolio.langage }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project_show_buttons">
+                    <a href="{{ path('app_portfolio') }}"><button>Retour</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

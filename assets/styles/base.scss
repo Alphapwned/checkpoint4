@@ -1,27 +1,43 @@
-.background{
-    width: calc(100vw - 300px);
-    min-height: 100vh;
-    position: fixed;
-    left: 300px;
+.main_wrapper{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template:[main-left]   "nav main" 1fr  [main-right]
+                 / 300px 1fr;
+}
+
+.background_user_index{
     background-image: url(../images/mountain.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
 }
 
-.background_admin{
-    width: calc(100vw - 300px);
-    min-height: 100vh;
-    position: fixed;
-    left: 300px;
-    background-image: url(../images/ws.jpg);
+.background_user_dark{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/mountain.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+.background_admin_dark{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/ws.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+.content{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100vh;
 }

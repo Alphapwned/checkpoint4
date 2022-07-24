@@ -16,12 +16,30 @@
 
     <body>
         <main>
+
+            <div class="mobile">
+                <nav>
+	                <div id="burger-menu" class="hamburgerMenu">
+		                <span></span>
+	                </div>
+	                
+                    <div id="mobile_menu">
+                        <div class="frame">
+                        <a class="mobile_menu_title" href="{{ path('app_about') }}">About me</a>
+                        <a class="mobile_menu_title" href="{{ path('app_resume') }}">Resume</a>
+                        <a class="mobile_menu_title" href="{{ path('app_portfolio') }}">Portfolio</a>
+                        <a class="mobile_menu_title" href="{{ path('app_contact') }}">Contact me</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
             <div class="main_wrapper">
-                <div class="nav_admin">
-                    {% include "partials/_AdminNavbar.html.twig" %}
+                <div class="nav_user">
+                    {% include "partials/_UserNavbar.html.twig" %}
                 </div>
                 <div class="pages_content">
-                    <div class="background_admin_dark"></div>
+                    <div class="background_user_dark"></div>
                     <div class="content">
                         {% block body %}{% endblock %}
                     </div>

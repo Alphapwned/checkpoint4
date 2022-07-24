@@ -1,42 +1,37 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseAdmin.html.twig' %}
 
 {% block title %}Contact{% endblock %}
 
 {% block body %}
-    <h1>Contact</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ contact.id }}</td>
-            </tr>
-            <tr>
-                <th>Firstname</th>
-                <td>{{ contact.firstname }}</td>
-            </tr>
-            <tr>
-                <th>Lastname</th>
-                <td>{{ contact.lastname }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ contact.email }}</td>
-            </tr>
-            <tr>
-                <th>Message</th>
-                <td>{{ contact.message }}</td>
-            </tr>
-            <tr>
-                <th>CreatedAt</th>
-                <td>{{ contact.createdAt ? contact.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_admin_message_index') }}">back to list</a>
-
-    <a href="{{ path('app_admin_message_edit', {'id': contact.id}) }}">edit</a>
-
-    {{ include('admin_message/_delete_form.html.twig') }}
+    <div class="admin_message_show">
+        <h3 class="text-center">Message - Détail</h3>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Prénom</th>
+                    <td>{{ contact.firstname }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ contact.lastname }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ contact.email }}</td>
+                </tr>
+                <tr>
+                    <th>Envoyé le</th>
+                    <td>{{ contact.createdAt ? contact.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Message</th>
+                    <td>{{ contact.message }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="button">
+            <a href="{{ path('app_admin_message_index') }}"><button>Retour à la liste</button></a>
+            <a href="{{ path('app_admin_message_delete', {'id': contact.id}) }}"><button>Delete</button></a>
+        </div>
+    </div>
 {% endblock %}

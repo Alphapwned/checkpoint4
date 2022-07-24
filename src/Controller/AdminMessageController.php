@@ -20,7 +20,7 @@ class AdminMessageController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_admin_message_show', methods: ['GET'])]
+    #[Route('/show/{id}', name: 'app_admin_message_show', methods: ['GET'])]
     public function show(Contact $contact): Response
     {
         return $this->render('admin_message/show.html.twig', [
