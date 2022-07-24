@@ -8,6 +8,24 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
 
+/*====== Burger menu mobile ======*/
+
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+var burgerMenu = document.getElementById("burger-menu");
+var overlay = document.getElementById("mobile_menu");
+
+if (burgerMenu) {
+    burgerMenu.addEventListener("click", function () {
+        this.classList.toggle("close");
+        overlay.classList.toggle("overlay");
+        if (document.documentElement.style.overflow === "hidden") {
+            document.documentElement.style.overflow = "initial";
+        } else {
+            document.documentElement.style.overflow = "hidden";
+        }
+    });
+}
+
 /* Import TinyMCE */
 import tinymce from "tinymce";
 
@@ -36,7 +54,7 @@ import "tinymce/skins/content/default/content.css";
 
 /* Initialize TinyMCE */
 tinymce.init({
-    selector: "textarea",
+    selector: ".project_create_content",
     language: "fr_FR",
     plugins: "advlist code link lists table fullscreen image",
     toolbar:

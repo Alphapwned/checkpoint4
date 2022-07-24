@@ -3,9 +3,13 @@
 {% block title %}Admin - Project{% endblock %}
 
 {% block body %}
-    <div class="admin_message">
-        <h2>Projets</h2>
 
+    <h2 class="text-center">Projets</h2>
+
+    <div class="admin_projects_table">
+        <a class="button_admin_create_project" href="{{ path('app_admin_project_new') }}">
+            <button>Nouveau</button>
+        </a>
         <table class="table">
             <thead>
                 <tr>
@@ -30,12 +34,12 @@
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="8">no records found</td>
+                    <td>no records found</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
+    <div>
 
-        <a href="{{ path('app_admin_project_new') }}">Create new</a>
-    </div>
+
 {% endblock %}

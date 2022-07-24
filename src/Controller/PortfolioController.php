@@ -16,4 +16,18 @@ class PortfolioController extends AbstractController
             'projects' => $portfolioRepository->findAll()
         ]);
     }
+
+    #[Route('/portfolio/{id<^[0-9]+$>}', name: 'app_portfolio_show')]
+    public function show(int $id, PortfolioRepository $portfolioRepository): Response
+    {
+        $portfolio = $portfolioRepository->findOneBy(['id' => $id]);
+        if (!$portfolio) {
+            throw $this->createNotFoundException(
+                'The project that you are looking for is not found'
+            );
+        }
+        return $this->render('portfolio/show.html.twig', [
+            'portfolio' => $portfolio,
+        ]);
+    }
 }
