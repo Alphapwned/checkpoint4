@@ -1,43 +1,44 @@
-.error_message{
-    font-size: 1.5em;
-    color: red;
-    align-self: center;
-}
-
-.contact_form{
-    width: 100%;
+.contact-page{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-        
-    #contact_firstname, #contact_lastname, #contact_email, #contact_message, #contact_send{
-        margin: 20px 0 20px 0;
-    }
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
 
-    #contact_firstname{
-        margin: 0 0 20px 0;
-    }
-    #contact_firstname, #contact_lastname{
-        width: 50%;
-    }
-
-    #contact_email{
-        width: 70%;
-        margin: 20px 0 20px 0;
-    }
-
-    .tox-tinymce{
-        width: 100%;
-        height: 50%;
-        margin: 20px 0 0 0;
-    }
-
-    #contact_send{
-        width: 50%;
+    .error_message{
+        font-size: 1.5em;
+        color: red;
         align-self: center;
-        background-color: rgb(20, 130, 160);
-        color: white;
+    }
+
+    form{
+        width: 40%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+            
+        #contact_firstname, #contact_lastname, #contact_email, #contact_message, #contact_send{
+            margin: 20px 0 20px 0;
+            width: 100%
+        }
+
+        #contact_message{
+            height: 25%;
+        }
+
+        #contact_send{
+            width: 50%;
+            align-self: center;
+            background-color: rgb(20, 130, 160);
+            color: white;
+        }
     }
 }
 
+@media screen and (min-width: 1000px) {
+    .contact-page{
+        width: calc(100vw - 300px);;
+    }
+}

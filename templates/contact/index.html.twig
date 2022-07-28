@@ -4,17 +4,19 @@
 
 {% block body %}
 
-    <div class="contact_form">
+    
+
+    <div class="contact-page">
+        <h3 class="text-center">Contact form</h3> 
         {{ form_start(form)}}
-            <h3 class="text-center">Contact form</h3>        
             <p class="error_message">{{ warning }}</p>
             {{ form_widget(form.firstname) }}
             {{ form_widget(form.lastname) }}
             {{ form_widget(form.email) }}
             {{ form_widget(form.message) }}
-            <div class="text-center">
+ 
                 {{ form_widget(form.send) }}
-            </div>
+            
             {{ form_rest(form) }}
         
         {{ form_end(form) }}

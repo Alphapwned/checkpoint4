@@ -15,18 +15,16 @@
     </head>
 
     <body>
+
+        <header>
+            {% include "partials/_admin_menu.html.twig" %}
+        </header>
+
         <main>
-            <div class="main_wrapper">
-                <div class="nav_admin">
-                    {% include "partials/_AdminNavbar.html.twig" %}
-                </div>
-                <div class="pages_content">
-                    <div class="background_admin_dark"></div>
-                    <div class="content">
-                        {% block body %}{% endblock %}
-                    </div>
-                </div>
+            <div class="main-admin">
+                {% block body %}{% endblock %}
             </div>
         </main>
+        
     </body>
 </html>

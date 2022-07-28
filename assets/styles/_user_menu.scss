@@ -1,63 +1,108 @@
+.user-desktop-menu{
+    background-color: $buttonColorBlue;
+    width: 300px;
+    height: 100vh;
+    position: fixed;
 
-@media screen and (max-width: 1250px) {
-    .portfolio_wrapper{
+    .profil_img{
+        width: 100%;
+        height: 30%;
+        padding: 10px;
+        div{
+            width: 100%;
+            height: 100%;
+            background-image: url(../images/profil.jpeg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+    }
+
+    nav{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        width: 100%;
+        height: 40%;
+
+        ul{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            margin: 30px 0 0 0;
+            padding: 0;
+            
+            .line{
+                align-self: center;
+                width: 80%;
+                height: 1px;
+                background-color: white;
+            }
+
+            a{
+                color: white;
+
+                li{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 7vh;
+                }
+            }
+        }
+    }
+
+
+
+    .footer{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 30%;
+
+        .social_link{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+            .separator{
+                width: 80%;
+                height: 2px;
+                background-color: white;
+            }
+
+            ul{
+                display: flex;
+                justify-content: space-around;
+                align-items: baseline;
+                margin: 2vh 0 2vh 0;
+                padding: 0;
+                width: 100%;
+            }
+        }
+            
+        p{
+            text-align: center;
+            margin: 0 0 10px 0;
+            color: white;
+        }
     }
 }
 
-@media screen and (max-width: 1000px) {
 
-    .dashboard_user, .nav_user {
-    display: none;
-    }
-
-    .mobile_menu_title{
-
-    }
-
-    .content {
-        width: 100vw;
-    }
-
-    .main_wrapper{
-        display: flex;
-    }
-    
-    .portfolio_wrapper{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    form{
-        height: 100vh;
-        width: 100vw;
-        display: flex;
-
-        align-items: center;
-        flex-direction: column;
-    }
-
-    #contact_firstname, #contact_lastname, #contact_email, #contact_message{
-        width: 90vw !important;
-        align-items: center !important;
-    }
-
-    #contact_send{
-        width: 50vw !important;
-        align-items: center !important;
-    }
-
-    
-
-    .mobile{
-        width: 100%;
-        height: 100%;
-    }
+.user-mobile-menu{
+    width: 100%;
+    height: 100%;
 
     #burger-menu {
         height: 54px;
@@ -67,7 +112,7 @@
         overflow: visible;
         position: fixed;
         z-index: 2;
-    
+
         // THE LINES
         span,
         span:before,
@@ -79,33 +124,33 @@
             position: absolute;
             transition: 0.3s ease-in-out;
         }
-    
+
         span:before,
         span:after {
             content: '';
         }
-    
+
         // TOP
         span:before {
             left: 0px;
             top: -10px;
             width: 27px;
         }
-    
+
         // MIDDLE
         span {
             right: 0px;
             top: 13px;
             width: 27px;
         }
-    
+
         // BOTTOM
         span:after {
             left: 0px;
             top: 10px;
             width: 27px;
         }
-    
+
         // ROTATION ON CLICK
         &.close {
             // TOP
@@ -114,14 +159,14 @@
                 transform: rotate(90deg);
                 width: 27px;
             }
-    
+
             // MIDDLE
             span {
                 transform: rotate(-45deg);
                 top: 13px;
                 width: 27px;
             }
-    
+
             // BOTTOM
             span:after {
                 top: 0px;
@@ -132,7 +177,7 @@
             }
         }
     }
-    
+
     #mobile_menu {
         z-index: 1;
         min-width: 100%;
@@ -149,11 +194,10 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-    
+
         &.overlay {
             visibility: visible;
             opacity: 1;
-            padding-top: 100px;
             background: rgba(0, 0, 0, 0.65);
         }
 
@@ -162,7 +206,7 @@
             grid-template-columns: 1fr;
             grid-template-rows: repeat(4, 1fr);
         }
-    
+
         .frame a {
             color: rgb(0, 0, 0);
             display: flex;
@@ -172,15 +216,26 @@
             font-size: 2em;
         }
     }
+
     nav .frame{
         position: fixed;
-        
         width: 90%;
         height: 70vh;
         padding-top: 1em;
         padding-bottom: 1em;
         background-color: $white;
         border-radius: 5px;
+    }
+}
 
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+    .user-desktop-menu{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .user-mobile-menu{
+        display: none;
     }
 }

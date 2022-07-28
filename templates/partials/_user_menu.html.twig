@@ -1,11 +1,9 @@
 {# MENU DESKTOP #}
-<div class="dashboard_user">
-
+<div class="user-desktop-menu">
 	<div class="profil_img">
-		<div class="img"></div>
+		<div></div>
 	</div>
-
-	<nav class="menu">
+	<nav>
 		<ul>
 			<div class="line"></div>
 			<a href="{{ path('app_about') }}"><li>About me</li></a>
@@ -18,19 +16,32 @@
 			<div class="line"></div>
 		</ul>
 	</nav>
-
-	<div class="separator"></div>
 	<div class="footer">
 		<div class="social_link">
+			<div class="separator"></div>
 			<ul>
 				<a href="http://www.linkedin.com/in/gautierfondevila"><li><img src="{{ asset('build/images/linkedin_logo.png') }}" alt="Linkedin logo"></li></a>
 				<a href="https://github.com/Alphapwned"><li><img src="{{ asset('build/images/github_logo.png') }}" alt="Github logo"></li></a>
 				<a href="https://www.youtube.com/channel/UC-80OmuY1efzOE3EKgkbi5w"><li><img src="{{ asset('build/images/youtube_logo.png') }}" alt="Youtube logo"></li></a>
 			</ul>
 		</div>
-		<p>
-			2022 © FONDEVILA Gautier<br>All rights reserved</p>
+		<p>2022 © FONDEVILA Gautier<br>All rights reserved</p>
 	</div>
 </div>
 
-
+{# MENU MOBILE #}
+<div class="user-mobile-menu">
+	<nav>
+		<div id="burger-menu" class="hamburgerMenu">
+			<span></span>
+		</div>
+		<div id="mobile_menu">
+			<div class="frame">
+			<a class="desktop about" href="{{ path('app_about') }}">About me</a>
+			<a class="desktop about" href="{{ path('app_resume') }}">Resume</a>
+			<a class="desktop about" href="{{ path('app_portfolio') }}">Portfolio</a>
+			<a class="desktop about" href="{{ path('app_contact') }}">Contact me</a>
+			</div>
+		</div>
+	</nav>
+</div>
