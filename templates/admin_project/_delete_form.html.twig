@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_admin_project_delete', {'id': portfolio.id}) }}" onsubmit="return confirm('Es-tu sûr de vouloir supprimer ce projet ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ portfolio.id) }}">
+    <button class="delete">Supprimer</button>
+</form>

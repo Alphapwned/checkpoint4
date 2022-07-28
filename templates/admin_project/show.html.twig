@@ -1,0 +1,49 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block body %}
+    
+    <h3 class="text-center">Projet - Détail</h3>
+
+    <div class="admin_project_detail_show">
+        <div class="admin_project_detail">
+            <div class="admin_project_detail_name">
+                <h3>{{ portfolio.name }}</h3>
+            </div>
+            <div class="admin_project_detail_image">
+                <div style="background-image: url('{{ portfolio.image }}');"></div>
+                <p >
+            </div>
+            <div class="admin_project_detail_summary">
+                <span>Résumé : </span><br>
+                {{ portfolio.summary }}
+            </div>
+            <div class="admin_project_detail_content">
+                <span>Contenu : </span></br>
+                {% autoescape %}
+                    {{ portfolio.content|raw }}
+                {% endautoescape %}
+            </div>
+
+            <div class="admin_project_detail_duration_langage">
+                <div class="admin_project_detail_duration">
+                    <p class="text-center">Durée du projet : {{ portfolio.duration }} semaines</p>
+                </div>
+                <div class="admin_project_detail_langage">
+                    <p class="text-center">Language : {{ portfolio.langage }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="admin_project_show_buttons">
+            <a href="{{ path('app_admin_project_index') }}"><button>Retour</button></a>
+
+            <a href="{{ path('app_admin_project_edit', {'id': portfolio.id}) }}"><button>Editer</button></a>
+
+            {{ include('admin_project/_delete_form.html.twig') }}
+        </div>
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,85 @@
+@import '~bootstrap/scss/bootstrap';
+
+$buttonColorBlue : rgb(10, 100, 120);
+$buttonColorRed : red;
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body{
+    display: flex;
+    align-items: stretch;
+}
+
+
+
+a{
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: 4em;
+}
+
+h2{
+    font-size: 3em;
+}
+
+h3{
+    font-size: 3em;
+    padding: 50px 0 50px 0;
+}
+
+h4{
+    font-size: 1.5em;
+}
+
+.buttonSmall, .buttonBig{
+    background-color: $buttonColorBlue;
+    border-radius: 10px;
+}
+
+.buttonSmall{
+    width: 100px;
+}
+
+.buttonBig{
+    width: 200px
+}
+
+
+@import 'user_menu';
+@import 'admin_menu';
+@import 'base';
+@import 'index';
+@import 'portfolio';
+@import 'contact';
+@import 'login';
+@import 'admin_index';
+@import 'admin_message';
+@import 'admin_project';
+
+
+@media screen and (min-width: 1000px) {
+    header{
+        display: flex;
+        align-items: stretch;
+        width: 300px;
+    }
+
+    main{
+        width: calc(100vw - 300px);
+    }
+
+}

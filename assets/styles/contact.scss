@@ -1,0 +1,44 @@
+.contact-page{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+
+    .error_message{
+        font-size: 1.5em;
+        color: red;
+        align-self: center;
+    }
+
+    form{
+        width: 40%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+            
+        #contact_firstname, #contact_lastname, #contact_email, #contact_message, #contact_send{
+            margin: 20px 0 20px 0;
+            width: 100%
+        }
+
+        #contact_message{
+            height: 25%;
+        }
+
+        #contact_send{
+            width: 50%;
+            align-self: center;
+            background-color: rgb(20, 130, 160);
+            color: white;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .contact-page{
+        width: calc(100vw - 300px);;
+    }
+}

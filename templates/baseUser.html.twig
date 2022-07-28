@@ -15,15 +15,16 @@
     </head>
 
     <body>
+    
         <header>
+            {% include "partials/_user_menu.html.twig" %}
         </header>
 
         <main>
-        dfcc
-            {% block body %}{% endblock %}
+            <div class="main-user">
+                {% block body %}{% endblock %}
+            </div>
         </main>
 
-        <footer>
-        </footer>
     </body>
 </html>

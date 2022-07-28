@@ -1,0 +1,45 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Admin - Project{% endblock %}
+
+{% block body %}
+
+    <h2 class="text-center">Projets</h2>
+
+    <div class="admin_projects_table">
+        <a class="button_admin_create_project" href="{{ path('app_admin_project_new') }}">
+            <button>Nouveau</button>
+        </a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Résumé</th>
+                    <th>Durée</th>
+                    <th>Language</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for portfolio in portfolios %}
+                <tr>
+                    <td>{{ portfolio.name }}</td>
+                    <td>{{ portfolio.summary }}</td>
+                    <td>{{ portfolio.duration }}</td>
+                    <td>{{ portfolio.langage }}</td>
+                    <td>
+                        <a href="{{ path('app_admin_project_show', {'id': portfolio.id}) }}"><button>Détail</button></a>
+                        <a href="{{ path('app_admin_project_edit', {'id': portfolio.id}) }}"><button>Editer</button></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    <div>
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+<div class="admin_project_edit_form">
+    {{ form_start(form)}}
+        <label>Nom du projet :</label>
+        {{ form_widget(form.name) }}
+        <label>Image (lien) :</label>
+        {{ form_widget(form.image) }}
+        <label>Résumé :</label>
+        {{ form_widget(form.summary) }}
+        <label>Contenu de l'article :</label>
+        {{ form_widget(form.content) }}
+        <label>Durée du projet (en semaines) :</label>
+        {{ form_widget(form.duration) }}
+        <label>Langage :</label>
+        {{ form_widget(form.langage) }}
+        <div class="admin_project_edit_button">
+            <a href="{{ path('app_admin_project_index') }}"><button>Retour</button></a>
+            <button>{{ button_label|default('Save') }}</button>
+        </div>
+        {{ form_rest(form) }}
+    {{ form_end(form) }}
+</div>

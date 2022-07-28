@@ -1,0 +1,25 @@
+{% extends 'baseUser.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+
+    
+
+    <div class="contact-page">
+        <h3 class="text-center">Contact form</h3> 
+        {{ form_start(form)}}
+            <p class="error_message">{{ warning }}</p>
+            {{ form_widget(form.firstname) }}
+            {{ form_widget(form.lastname) }}
+            {{ form_widget(form.email) }}
+            {{ form_widget(form.message) }}
+ 
+                {{ form_widget(form.send) }}
+            
+            {{ form_rest(form) }}
+        
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
